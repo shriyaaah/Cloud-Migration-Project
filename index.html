@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Migration System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 300px;
+            border-radius: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            width: 90%;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Cloud Cost Estimation</h2>
+
+    <form action="/calculate" method="post">
+        <input type="number" name="servers" placeholder="Number of Servers" required>
+        <input type="number" name="storage" placeholder="Storage (GB)" required>
+        <input type="number" name="maintenance" placeholder="Maintenance Cost" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+</div>
+
+</body>
+</html>

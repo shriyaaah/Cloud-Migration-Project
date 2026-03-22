@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Cost Comparison</h2>
+
+    <p><b>On-Premise:</b> ₹ {{ on_prem }}</p>
+    <p><b>Cloud:</b> ₹ {{ cloud }}</p>
+
+    <canvas id="chart" width="300" height="200"></canvas>
+
+    <h3>{{ suggestion }}</h3>
+
+    <br>
+    <a href="/">Go Back</a>
+</div>
+
+<script>
+    const ctx = document.getElementById('chart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['On-Premise', 'Cloud'],
+            datasets: [{
+                label: 'Cost Comparison',
+                data: [{{ on_prem }}, {{ cloud }}]
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>
